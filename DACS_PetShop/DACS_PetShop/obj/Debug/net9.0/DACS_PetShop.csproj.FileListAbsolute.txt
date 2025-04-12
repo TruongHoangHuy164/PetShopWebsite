@@ -80,8 +80,6 @@ H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compre
 H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compressed\2r8naht86i-muycvpuwrr.gz
 H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compressed\z3eeqpkaxb-87fc7y1x7t.gz
 H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compressed\azu6e2d9te-mlv21k5csn.gz
-H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compressed\zrfhkspoto-y02jxsk0ak.gz
-H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compressed\g5ruv075ls-y02jxsk0ak.gz
 H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\staticwebassets.build.json
 H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\staticwebassets.development.json
 H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -441,3 +439,5 @@ H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compre
 H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
 H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
 H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\DACS_Pet.0565E2BC.Up2Date
+H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compressed\zrfhkspoto-iloyrz9wji.gz
+H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\obj\Debug\net9.0\compressed\g5ruv075ls-iloyrz9wji.gz
