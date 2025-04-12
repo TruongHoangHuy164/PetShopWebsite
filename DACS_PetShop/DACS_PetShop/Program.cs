@@ -21,6 +21,16 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 // (Tuỳ chọn) Nếu muốn xác minh email, cần thêm IEmailSender
 // builder.Services.AddTransient<IEmailSender, YourEmailSenderClass>();
 
+/*builder.Services.AddAuthentication()
+    .AddGoogle(options =>
+    {
+        IConfigurationSection googleAuthNSection =
+            builder.Configuration.GetSection("Authentication:Google");
+
+        options.ClientId = googleAuthNSection["ClientId"];
+        options.ClientSecret = googleAuthNSection["ClientSecret"];
+        options.CallbackPath = "/signin-google";
+    });*/
 // Cấu hình đường dẫn cookie (login/logout)
 builder.Services.ConfigureApplicationCookie(options =>
 {
