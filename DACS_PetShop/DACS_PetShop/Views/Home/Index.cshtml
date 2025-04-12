@@ -1,8 +1,323 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <!-- Main Banner Slider -->
+    <div id="main-banner-slider" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="banner-ratio">
+                    <img src="/images/bannerCHOMEO.jpg" class="banner-img" alt="Main Banner 1">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="banner-ratio">
+                    <img src="/images/brand/thucancho.jpg" class="banner-img" alt="Main Banner 2">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="banner-ratio">
+                    <img src="/images/brand/thucanmeo.jpg" class="banner-img" alt="Main Banner 3">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="banner-ratio">
+                    <img src="/images/bannerCHOMEO.jpg" class="banner-img" alt="Main Banner 4">
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#main-banner-slider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#main-banner-slider" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- Icon 4 -->
+    <div class="service-icons container my-5">
+        <div class="row text-center">
+            <div class="col-md-3 col-6 mb-4">
+                <div class="icon-box">
+                    <i class="fas fa-truck-fast"></i>
+                    <h5>Miễn Phí Vận Chuyển</h5>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="icon-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <h5>Sản Phẩm Chính Hãng</h5>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="icon-box">
+                    <i class="fas fa-credit-card"></i>
+                    <h5>Thanh Toán Tiện Lợi</h5>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="icon-box">
+                    <i class="fas fa-headset"></i>
+                    <h5>Hỗ Trợ Chuyên Nghiệp</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Banner Section -->
+    <div class="text-center">
+        <!-- Banner Section -->
+        <div class="banner-row">
+            <div class="banner-item">
+                <img src="/images/banner.jpg" alt="Banner 1" />
+            </div>
+            <div class="banner-item">
+                <img src="/images/bannerMeo.jpg" alt="Banner 2" />
+            </div>
+        </div>
+    </div>
+
+
+    <!-- GIF Introduction Section -->
+    <div class="gif-introduction">
+        <img src="~/images/Introduction.gif" alt="Giới Thiệu" />
+    </div>
+
+    <!-- Featured Products Section (Slider) -->
+    <div class="slider-section">
+        <h3>Sản Phẩm Nổi Bật</h3>
+        <div id="featured-products-slider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="product1.jpg" class="d-block w-100" alt="Product 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="product2.jpg" class="d-block w-100" alt="Product 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="product3.jpg" class="d-block w-100" alt="Product 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="product4.jpg" class="d-block w-100" alt="Product 4">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#featured-products-slider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featured-products-slider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Best-selling Products Section -->
+    <div class="slider-section">
+        <h3>Sản Phẩm Bán Chạy</h3>
+        <div id="best-selling-slider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="best-seller1.jpg" class="d-block w-100" alt="Best-seller 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="best-seller2.jpg" class="d-block w-100" alt="Best-seller 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="best-seller3.jpg" class="d-block w-100" alt="Best-seller 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="best-seller4.jpg" class="d-block w-100" alt="Best-seller 4">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#best-selling-slider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#best-selling-slider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Brand Section -->
+    <div class="brand-slider-section my-5">
+        <h3 class="text-center mb-4">Các Thương Hiệu Hợp Tác</h3>
+        <div class="brand-slider-wrapper">
+            <div class="brand-slider-track">
+                <img src="~/images/brand/caton.png" alt="Brand 1" />
+                <img src="~/images/brand/meo.jpg" alt="Brand 2" />
+                <img src="~/images/brand/nutrience.jpg" alt="Brand 3" />
+                <img src="~/images/brand/rc.jpg" alt="Brand 4" />
+                <!-- Copy thêm để loop mượt -->
+                <img src="~/images/brand/caton.png" alt="Brand 1 copy" />
+                <img src="~/images/brand/meo.jpg" alt="Brand 2 copy" />
+                <img src="~/images/brand/nutrience.jpg" alt="Brand 3 copy" />
+                <img src="~/images/brand/rc.jpg" alt="Brand 4 copy" />
+                <img src="~/images/brand/caton.png" alt="Brand 1 copy" />
+                <img src="~/images/brand/meo.jpg" alt="Brand 2 copy" />
+                <img src="~/images/brand/nutrience.jpg" alt="Brand 3 copy" />
+                <img src="~/images/brand/rc.jpg" alt="Brand 4 copy" />
+            </div>
+        </div>
+    </div>
+
+<style>
+        .banner-ratio {
+            position: relative;
+            width: 100%;
+            padding-top: 42.857%; /* Tương đương 16:9 tỉ lệ (9 / 16 = 0.5625 → 56.25%) */
+            overflow: hidden;
+        }
+
+        .banner-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Giữ tỉ lệ ảnh và cắt phần dư */
+            object-position: center;
+        }
+
+
+    /* Icon 4*/
+
+    .icon-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+        border: 2px solid #ddd; /* Thêm border cho cả box */
+        border-radius: 12px; /* Bo góc mềm mại */
+        transition: 0.3s;
+        background-color: #fff;
+        height: 100%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+        .icon-box:hover {
+            border-color: #ff6600;
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.2);
+        }
+
+        .icon-box i {
+            font-size: 36px;
+            color: #ff6600;
+            border: 2px solid #ff6600;
+            border-radius: 50%;
+            padding: 15px;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+            .icon-box i:hover {
+                background-color: #ff6600;
+                color: white;
+            }
+
+        .icon-box h5 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+
+    /* Banner Section */
+    .banner-row {
+        display: flex;
+        gap: 20px; /* khoảng cách giữa 2 banner */
+        margin-bottom: 30px;
+    }
+
+    .banner-item {
+        flex: 1; /* chia đều không gian cho 2 banner */
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+        .banner-item img {
+            width: 100%;
+            height: auto; /* tự động scale theo tỉ lệ */
+            display: block;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+
+        /* Đảm bảo các banner trong cột có cùng chiều cao */
+        .banner-column .banner {
+            height: 250px; /* Cùng chiều cao với Banner 1 */
+        }
+
+    .banner h2 {
+        background-color: rgba(0, 0, 0, 0.5); /* Tạo nền mờ để chữ dễ đọc */
+        padding: 10px;
+    }
+
+    /* Slider Section */
+    .slider-section {
+        margin-bottom: 40px;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* GIF Section */
+    .gif-introduction img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 40px;
+    }
+        /* Brand Section */
+        .brand-slider-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .brand-slider-track {
+            display: flex;
+            width: calc(250px * 8); /* tổng số ảnh * kích thước */
+            animation: scrollBrands 20s linear infinite;
+        }
+
+            .brand-slider-track img {
+                width: 150px;
+                height: auto;
+                margin: 0 20px;
+                object-fit: contain;
+                filter: grayscale(40%);
+                transition: filter 0.3s;
+            }
+
+                .brand-slider-track img:hover {
+                    filter: grayscale(0%);
+                }
+
+        @@keyframes scrollBrands {
+            0%
+
+        {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+
+        }
+    </style>

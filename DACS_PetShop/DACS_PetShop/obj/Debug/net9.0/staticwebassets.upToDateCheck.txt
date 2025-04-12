@@ -62,6 +62,17 @@ H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\wwwroot\lib\bootstrap\d
 H:\DACS_PetShop\PetShopWebsite\DACS_PetShop\DACS_PetShop\wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\banner.jpg
+wwwroot\images\bannerCHOMEO.jpg
+wwwroot\images\bannerMeo.jpg
+wwwroot\images\brand\CatOn.png
+wwwroot\images\brand\MeO.jpg
+wwwroot\images\brand\Nutrience.jpg
+wwwroot\images\brand\RC.jpg
+wwwroot\images\brand\Reflex.png
+wwwroot\images\brand\ThucAnCho.jpg
+wwwroot\images\brand\ThucAnMeo.jpg
+wwwroot\images\Introduction.gif
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
