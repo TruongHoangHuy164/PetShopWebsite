@@ -30,7 +30,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 // Đăng Nhập Google
 
-builder.Services.AddAuthentication()
+/*builder.Services.AddAuthentication()
     .AddGoogle(options =>
     {
         IConfigurationSection googleAuthNSection =
@@ -39,7 +39,7 @@ builder.Services.AddAuthentication()
         options.ClientId = googleAuthNSection["ClientId"];
         options.ClientSecret = googleAuthNSection["ClientSecret"];
         options.CallbackPath = "/signin-google";
-    });
+    });*/
 
 // Thêm Razor Pages và MVC
 builder.Services.AddControllersWithViews();
