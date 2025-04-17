@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
+  "Hash": "8Ni/69KGzSZKT3RnK0Ce0zNutmhRRkeAi5PKxJGiOYU=",
+=======
   "Hash": "AYSq58tgUPDl6azLvC6oI89t3K0r044r3JwIW92TqqU=",
+>>>>>>> main
   "Source": "DACS_PetShop",
   "BasePath": "_content/DACS_PetShop",
   "Mode": "Default",
@@ -4070,6 +4074,174 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\08fda22f-bc66-4f4f-a084-412266f70152.jpg",
+      "SourceId": "DACS_PetShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\",
+      "BasePath": "_content/DACS_PetShop",
+      "RelativePath": "images/08fda22f-bc66-4f4f-a084-412266f70152#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "u5aqqvfj61",
+      "Integrity": "8psBWDvsF8diqTvpZrgY9N3r9lOlX5qtnr9chrUH2eg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\08fda22f-bc66-4f4f-a084-412266f70152.jpg"
+    },
+    {
+      "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\0a940d56-3750-4127-8fe6-e632210a5590.jpg",
+      "SourceId": "DACS_PetShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\",
+      "BasePath": "_content/DACS_PetShop",
+      "RelativePath": "images/0a940d56-3750-4127-8fe6-e632210a5590#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "q0401bqwrb",
+      "Integrity": "pp568EtvNy/2brgp0h/7KrT+fuB/5cBC6Q7FClKABas=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\0a940d56-3750-4127-8fe6-e632210a5590.jpg"
+    },
+    {
+      "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\52fe88b3-3ee6-4fe3-84a5-e1d5df56c2c2.jpg",
+      "SourceId": "DACS_PetShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\",
+      "BasePath": "_content/DACS_PetShop",
+      "RelativePath": "images/52fe88b3-3ee6-4fe3-84a5-e1d5df56c2c2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "q0401bqwrb",
+      "Integrity": "pp568EtvNy/2brgp0h/7KrT+fuB/5cBC6Q7FClKABas=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\52fe88b3-3ee6-4fe3-84a5-e1d5df56c2c2.jpg"
+    },
+    {
+      "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\5428722e-ca34-4688-aa0d-986c9f4f37b2.jpg",
+      "SourceId": "DACS_PetShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\",
+      "BasePath": "_content/DACS_PetShop",
+      "RelativePath": "images/5428722e-ca34-4688-aa0d-986c9f4f37b2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "am9ztjhzwi",
+      "Integrity": "jqsaRMTac4jaXLdjKNvM6OlbuBJOx9gP6tkDXwJ9fTs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\5428722e-ca34-4688-aa0d-986c9f4f37b2.jpg"
+    },
+    {
+      "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\7636799c-5d5c-4331-a711-c038268baf56.jpg",
+      "SourceId": "DACS_PetShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\",
+      "BasePath": "_content/DACS_PetShop",
+      "RelativePath": "images/7636799c-5d5c-4331-a711-c038268baf56#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d2g2fwj4gp",
+      "Integrity": "1dxR70SAOGhHsCl+ecQgUid36or95aJC4vDR4Hy/P4g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\7636799c-5d5c-4331-a711-c038268baf56.jpg"
+    },
+    {
+      "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\8321237c-5d47-41a5-bae9-507aca7c4357.jpg",
+      "SourceId": "DACS_PetShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\",
+      "BasePath": "_content/DACS_PetShop",
+      "RelativePath": "images/8321237c-5d47-41a5-bae9-507aca7c4357#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qd8gu556x5",
+      "Integrity": "bnBHDUtRvowvQqD1fW73x84gNBP0FrPoGVRNa7itFNU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\8321237c-5d47-41a5-bae9-507aca7c4357.jpg"
+    },
+    {
+      "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\9527d64f-0a23-4625-b098-ad38a339de62.jpg",
+      "SourceId": "DACS_PetShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\",
+      "BasePath": "_content/DACS_PetShop",
+      "RelativePath": "images/9527d64f-0a23-4625-b098-ad38a339de62#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m4ydeloip7",
+      "Integrity": "+s+QHpJDwkyhJlp+qlw3G4h6CQt+U84J4Y/rBe709DY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\9527d64f-0a23-4625-b098-ad38a339de62.jpg"
+    },
+    {
+      "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\9d4e31d0-8222-41f9-a390-9dd6cdfdbc74.jpg",
+      "SourceId": "DACS_PetShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\",
+      "BasePath": "_content/DACS_PetShop",
+      "RelativePath": "images/9d4e31d0-8222-41f9-a390-9dd6cdfdbc74#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m4ydeloip7",
+      "Integrity": "+s+QHpJDwkyhJlp+qlw3G4h6CQt+U84J4Y/rBe709DY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\9d4e31d0-8222-41f9-a390-9dd6cdfdbc74.jpg"
+    },
+    {
       "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\banner.jpg",
       "SourceId": "DACS_PetShop",
       "SourceType": "Discovered",
@@ -4278,6 +4450,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\brand\\ThucAnMeo.jpg"
+    },
+    {
+      "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\f844ca4f-02c2-45f8-a76e-caa1283a3b25.jpg",
+      "SourceId": "DACS_PetShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\",
+      "BasePath": "_content/DACS_PetShop",
+      "RelativePath": "images/f844ca4f-02c2-45f8-a76e-caa1283a3b25#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qd8gu556x5",
+      "Integrity": "bnBHDUtRvowvQqD1fW73x84gNBP0FrPoGVRNa7itFNU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\f844ca4f-02c2-45f8-a76e-caa1283a3b25.jpg"
     },
     {
       "Identity": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\Introduction.gif",
@@ -5943,7 +6136,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6004,7 +6197,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6049,7 +6242,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6104,7 +6297,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6165,7 +6358,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6210,7 +6403,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6265,7 +6458,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6318,7 +6511,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6355,7 +6548,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6402,7 +6595,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6455,7 +6648,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6492,7 +6685,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 12 Apr 2025 16:25:16 GMT"
+          "Value": "Thu, 17 Apr 2025 15:46:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15381,6 +15574,662 @@
       ]
     },
     {
+      "Route": "images/08fda22f-bc66-4f4f-a084-412266f70152.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\08fda22f-bc66-4f4f-a084-412266f70152.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "94329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8psBWDvsF8diqTvpZrgY9N3r9lOlX5qtnr9chrUH2eg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 17:21:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8psBWDvsF8diqTvpZrgY9N3r9lOlX5qtnr9chrUH2eg="
+        }
+      ]
+    },
+    {
+      "Route": "images/08fda22f-bc66-4f4f-a084-412266f70152.u5aqqvfj61.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\08fda22f-bc66-4f4f-a084-412266f70152.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "94329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8psBWDvsF8diqTvpZrgY9N3r9lOlX5qtnr9chrUH2eg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 17:21:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u5aqqvfj61"
+        },
+        {
+          "Name": "label",
+          "Value": "images/08fda22f-bc66-4f4f-a084-412266f70152.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8psBWDvsF8diqTvpZrgY9N3r9lOlX5qtnr9chrUH2eg="
+        }
+      ]
+    },
+    {
+      "Route": "images/0a940d56-3750-4127-8fe6-e632210a5590.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\0a940d56-3750-4127-8fe6-e632210a5590.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "125093"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pp568EtvNy/2brgp0h/7KrT+fuB/5cBC6Q7FClKABas=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 16:37:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pp568EtvNy/2brgp0h/7KrT+fuB/5cBC6Q7FClKABas="
+        }
+      ]
+    },
+    {
+      "Route": "images/0a940d56-3750-4127-8fe6-e632210a5590.q0401bqwrb.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\0a940d56-3750-4127-8fe6-e632210a5590.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "125093"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pp568EtvNy/2brgp0h/7KrT+fuB/5cBC6Q7FClKABas=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 16:37:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q0401bqwrb"
+        },
+        {
+          "Name": "label",
+          "Value": "images/0a940d56-3750-4127-8fe6-e632210a5590.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pp568EtvNy/2brgp0h/7KrT+fuB/5cBC6Q7FClKABas="
+        }
+      ]
+    },
+    {
+      "Route": "images/52fe88b3-3ee6-4fe3-84a5-e1d5df56c2c2.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\52fe88b3-3ee6-4fe3-84a5-e1d5df56c2c2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "125093"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pp568EtvNy/2brgp0h/7KrT+fuB/5cBC6Q7FClKABas=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 08:28:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pp568EtvNy/2brgp0h/7KrT+fuB/5cBC6Q7FClKABas="
+        }
+      ]
+    },
+    {
+      "Route": "images/52fe88b3-3ee6-4fe3-84a5-e1d5df56c2c2.q0401bqwrb.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\52fe88b3-3ee6-4fe3-84a5-e1d5df56c2c2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "125093"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pp568EtvNy/2brgp0h/7KrT+fuB/5cBC6Q7FClKABas=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 08:28:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q0401bqwrb"
+        },
+        {
+          "Name": "label",
+          "Value": "images/52fe88b3-3ee6-4fe3-84a5-e1d5df56c2c2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pp568EtvNy/2brgp0h/7KrT+fuB/5cBC6Q7FClKABas="
+        }
+      ]
+    },
+    {
+      "Route": "images/5428722e-ca34-4688-aa0d-986c9f4f37b2.am9ztjhzwi.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\5428722e-ca34-4688-aa0d-986c9f4f37b2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "91375"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jqsaRMTac4jaXLdjKNvM6OlbuBJOx9gP6tkDXwJ9fTs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 17:21:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "am9ztjhzwi"
+        },
+        {
+          "Name": "label",
+          "Value": "images/5428722e-ca34-4688-aa0d-986c9f4f37b2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jqsaRMTac4jaXLdjKNvM6OlbuBJOx9gP6tkDXwJ9fTs="
+        }
+      ]
+    },
+    {
+      "Route": "images/5428722e-ca34-4688-aa0d-986c9f4f37b2.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\5428722e-ca34-4688-aa0d-986c9f4f37b2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "91375"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jqsaRMTac4jaXLdjKNvM6OlbuBJOx9gP6tkDXwJ9fTs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 17:21:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jqsaRMTac4jaXLdjKNvM6OlbuBJOx9gP6tkDXwJ9fTs="
+        }
+      ]
+    },
+    {
+      "Route": "images/7636799c-5d5c-4331-a711-c038268baf56.d2g2fwj4gp.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\7636799c-5d5c-4331-a711-c038268baf56.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "168492"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1dxR70SAOGhHsCl+ecQgUid36or95aJC4vDR4Hy/P4g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 17:21:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d2g2fwj4gp"
+        },
+        {
+          "Name": "label",
+          "Value": "images/7636799c-5d5c-4331-a711-c038268baf56.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1dxR70SAOGhHsCl+ecQgUid36or95aJC4vDR4Hy/P4g="
+        }
+      ]
+    },
+    {
+      "Route": "images/7636799c-5d5c-4331-a711-c038268baf56.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\7636799c-5d5c-4331-a711-c038268baf56.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "168492"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1dxR70SAOGhHsCl+ecQgUid36or95aJC4vDR4Hy/P4g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 17:21:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-1dxR70SAOGhHsCl+ecQgUid36or95aJC4vDR4Hy/P4g="
+        }
+      ]
+    },
+    {
+      "Route": "images/8321237c-5d47-41a5-bae9-507aca7c4357.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\8321237c-5d47-41a5-bae9-507aca7c4357.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "138831"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bnBHDUtRvowvQqD1fW73x84gNBP0FrPoGVRNa7itFNU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 16:37:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bnBHDUtRvowvQqD1fW73x84gNBP0FrPoGVRNa7itFNU="
+        }
+      ]
+    },
+    {
+      "Route": "images/8321237c-5d47-41a5-bae9-507aca7c4357.qd8gu556x5.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\8321237c-5d47-41a5-bae9-507aca7c4357.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "138831"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bnBHDUtRvowvQqD1fW73x84gNBP0FrPoGVRNa7itFNU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 16:37:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qd8gu556x5"
+        },
+        {
+          "Name": "label",
+          "Value": "images/8321237c-5d47-41a5-bae9-507aca7c4357.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bnBHDUtRvowvQqD1fW73x84gNBP0FrPoGVRNa7itFNU="
+        }
+      ]
+    },
+    {
+      "Route": "images/9527d64f-0a23-4625-b098-ad38a339de62.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\9527d64f-0a23-4625-b098-ad38a339de62.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107030"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+s+QHpJDwkyhJlp+qlw3G4h6CQt+U84J4Y/rBe709DY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 08:28:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+s+QHpJDwkyhJlp+qlw3G4h6CQt+U84J4Y/rBe709DY="
+        }
+      ]
+    },
+    {
+      "Route": "images/9527d64f-0a23-4625-b098-ad38a339de62.m4ydeloip7.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\9527d64f-0a23-4625-b098-ad38a339de62.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107030"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+s+QHpJDwkyhJlp+qlw3G4h6CQt+U84J4Y/rBe709DY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 08:28:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m4ydeloip7"
+        },
+        {
+          "Name": "label",
+          "Value": "images/9527d64f-0a23-4625-b098-ad38a339de62.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+s+QHpJDwkyhJlp+qlw3G4h6CQt+U84J4Y/rBe709DY="
+        }
+      ]
+    },
+    {
+      "Route": "images/9d4e31d0-8222-41f9-a390-9dd6cdfdbc74.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\9d4e31d0-8222-41f9-a390-9dd6cdfdbc74.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107030"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+s+QHpJDwkyhJlp+qlw3G4h6CQt+U84J4Y/rBe709DY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 16:37:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+s+QHpJDwkyhJlp+qlw3G4h6CQt+U84J4Y/rBe709DY="
+        }
+      ]
+    },
+    {
+      "Route": "images/9d4e31d0-8222-41f9-a390-9dd6cdfdbc74.m4ydeloip7.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\9d4e31d0-8222-41f9-a390-9dd6cdfdbc74.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107030"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+s+QHpJDwkyhJlp+qlw3G4h6CQt+U84J4Y/rBe709DY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 16:37:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m4ydeloip7"
+        },
+        {
+          "Name": "label",
+          "Value": "images/9d4e31d0-8222-41f9-a390-9dd6cdfdbc74.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+s+QHpJDwkyhJlp+qlw3G4h6CQt+U84J4Y/rBe709DY="
+        }
+      ]
+    },
+    {
       "Route": "images/banner.jpg",
       "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\banner.jpg",
       "Selectors": [],
@@ -16197,6 +17046,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-puMWZlCv9/OAJ+aZGLWDJsXS0DiLReUfSr/PDxreyqA="
+        }
+      ]
+    },
+    {
+      "Route": "images/f844ca4f-02c2-45f8-a76e-caa1283a3b25.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\f844ca4f-02c2-45f8-a76e-caa1283a3b25.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "138831"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bnBHDUtRvowvQqD1fW73x84gNBP0FrPoGVRNa7itFNU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 08:28:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bnBHDUtRvowvQqD1fW73x84gNBP0FrPoGVRNa7itFNU="
+        }
+      ]
+    },
+    {
+      "Route": "images/f844ca4f-02c2-45f8-a76e-caa1283a3b25.qd8gu556x5.jpg",
+      "AssetFile": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\f844ca4f-02c2-45f8-a76e-caa1283a3b25.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "138831"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bnBHDUtRvowvQqD1fW73x84gNBP0FrPoGVRNa7itFNU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 08:28:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qd8gu556x5"
+        },
+        {
+          "Name": "label",
+          "Value": "images/f844ca4f-02c2-45f8-a76e-caa1283a3b25.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bnBHDUtRvowvQqD1fW73x84gNBP0FrPoGVRNa7itFNU="
         }
       ]
     },

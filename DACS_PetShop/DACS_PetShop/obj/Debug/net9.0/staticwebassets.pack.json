@@ -13,6 +13,38 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\08fda22f-bc66-4f4f-a084-412266f70152.jpg",
+      "PackagePath": "staticwebassets\\images\\08fda22f-bc66-4f4f-a084-412266f70152.jpg"
+    },
+    {
+      "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\0a940d56-3750-4127-8fe6-e632210a5590.jpg",
+      "PackagePath": "staticwebassets\\images\\0a940d56-3750-4127-8fe6-e632210a5590.jpg"
+    },
+    {
+      "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\52fe88b3-3ee6-4fe3-84a5-e1d5df56c2c2.jpg",
+      "PackagePath": "staticwebassets\\images\\52fe88b3-3ee6-4fe3-84a5-e1d5df56c2c2.jpg"
+    },
+    {
+      "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\5428722e-ca34-4688-aa0d-986c9f4f37b2.jpg",
+      "PackagePath": "staticwebassets\\images\\5428722e-ca34-4688-aa0d-986c9f4f37b2.jpg"
+    },
+    {
+      "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\7636799c-5d5c-4331-a711-c038268baf56.jpg",
+      "PackagePath": "staticwebassets\\images\\7636799c-5d5c-4331-a711-c038268baf56.jpg"
+    },
+    {
+      "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\8321237c-5d47-41a5-bae9-507aca7c4357.jpg",
+      "PackagePath": "staticwebassets\\images\\8321237c-5d47-41a5-bae9-507aca7c4357.jpg"
+    },
+    {
+      "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\9527d64f-0a23-4625-b098-ad38a339de62.jpg",
+      "PackagePath": "staticwebassets\\images\\9527d64f-0a23-4625-b098-ad38a339de62.jpg"
+    },
+    {
+      "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\9d4e31d0-8222-41f9-a390-9dd6cdfdbc74.jpg",
+      "PackagePath": "staticwebassets\\images\\9d4e31d0-8222-41f9-a390-9dd6cdfdbc74.jpg"
+    },
+    {
       "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\Introduction.gif",
       "PackagePath": "staticwebassets\\images\\Introduction.gif"
     },
@@ -55,6 +87,10 @@
     {
       "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\brand\\ThucAnMeo.jpg",
       "PackagePath": "staticwebassets\\images\\brand\\ThucAnMeo.jpg"
+    },
+    {
+      "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\images\\f844ca4f-02c2-45f8-a76e-caa1283a3b25.jpg",
+      "PackagePath": "staticwebassets\\images\\f844ca4f-02c2-45f8-a76e-caa1283a3b25.jpg"
     },
     {
       "Id": "H:\\DACS_PetShop\\PetShopWebsite\\DACS_PetShop\\DACS_PetShop\\wwwroot\\js\\site.js",

@@ -1,0 +1,94 @@
+﻿@model DACS_PetShop.Models.Product
+
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+<h1>Chi tiết sản phẩm</h1>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Name)</h4>
+    <hr />
+
+    <!-- Thông tin cơ bản -->
+    <dl class="row">
+        <dt class="col-sm-2">Tên sản phẩm</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Name)</dd>
+        <dt class="col-sm-2">Mô tả</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Description)</dd>
+       
+        <dt class="col-sm-2">Thương hiệu</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Brand.Name)</dd>
+        <dt class="col-sm-2">Danh mục</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Category.Name)</dd>
+        <dt class="col-sm-2">Ngày tạo</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.CreatedAt)</dd>
+    </dl>
+
+    <!-- Hiển thị ảnh sản phẩm -->
+    <h5>Ảnh sản phẩm</h5>
+    <div class="mb-3">
+        @if (Model.ProductImages != null && Model.ProductImages.Any())
+        {
+            <div class="d-flex flex-wrap">
+                @foreach (var image in Model.ProductImages.OrderBy(pi => pi.DisplayOrder))
+                {
+                    <div class="m-2">
+                        <img src="@image.ImageUrl" alt="@Model.Name" style="max-width: 150px; max-height: 150px;" />
+                        @if (image.IsMainImage)
+                        {
+                            <span class="badge badge-primary">Ảnh chính</span>
+                        }
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>Không có ảnh nào.</p>
+        }
+    </div>
+
+    <!-- Hiển thị kích thước -->
+    <h5>Kích thước sản phẩm</h5>
+    <div class="mb-3">
+        @if (Model.ProductSizes != null && Model.ProductSizes.Any())
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Kích thước</th>
+                        <th>Giá</th>
+                        <th>Số lượng tồn kho</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var productSize in Model.ProductSizes)
+                    {
+                        <tr>
+                            <td>@productSize.Size.Name</td>
+                            <td>@productSize.Price VNĐ</td>
+                            <td>@productSize.StockQuantity</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Không có kích thước nào.</p>
+        }
+    </div>
+</div>
+
+<!-- Nút hành động -->
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-warning">Sửa</a>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+</div>
+
+@section Scripts {
+    <script>
+        // Có thể thêm JavaScript nếu cần (ví dụ: phóng to ảnh khi click)
+    </script>
+}

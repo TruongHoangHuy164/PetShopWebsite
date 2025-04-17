@@ -1,0 +1,169 @@
+﻿@model DACS_PetShop.Models.ProductEditViewModel
+
+@{
+    ViewData["Title"] = "Chỉnh sửa sản phẩm";
+}
+
+<h1>Chỉnh sửa sản phẩm</h1>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Product.ProductId" />
+
+    <!-- Thông tin cơ bản của sản phẩm -->
+    <div class="form-group">
+        <label asp-for="Product.Name" class="control-label">Tên sản phẩm</label>
+        <input asp-for="Product.Name" class="form-control" />
+        <span asp-validation-for="Product.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Product.Description" class="control-label">Mô tả</label>
+        <textarea asp-for="Product.Description" class="form-control"></textarea>
+        <span asp-validation-for="Product.Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Product.CategoryId" class="control-label">Danh mục</label>
+        <select asp-for="Product.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+        <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Product.BrandId" class="control-label">Thương hiệu</label>
+        <select asp-for="Product.BrandId" class="form-control" asp-items="ViewBag.BrandId"></select>
+        <span asp-validation-for="Product.BrandId" class="text-danger"></span>
+    </div>
+
+    <!-- Chọn kích thước -->
+    <div class="form-group">
+        <label class="control-label">Kích thước</label>
+        <small class="form-text text-muted">Chọn các kích thước áp dụng cho sản phẩm này.</small>
+        <select multiple name="SizeIds" id="sizeSelect" class="form-control" asp-items="ViewBag.Sizes">
+            @foreach (var size in Model.ProductSizes)
+            {
+                <option value="@size.SizeId" selected>@size.Size.Name</option>
+            }
+        </select>
+    </div>
+
+    <!-- Trường động để nhập giá và số lượng tồn kho -->
+    <div id="sizeInputs" class="mb-3">
+        @for (int i = 0; i < Model.ProductSizes.Count; i++)
+        {
+            <div class="form-group mb-3">
+                <input type="hidden" name="ProductSizeIds[@i]" value="@Model.ProductSizes[i].ProductSizeId" />
+                <h5>Kích thước: @Model.ProductSizes[i].Size.Name</h5>
+                <input type="hidden" name="SizeIds[@i]" value="@Model.ProductSizes[i].SizeId" />
+                <label>Số lượng tồn kho</label>
+                <input type="number" name="StockQuantities[@i]" value="@Model.ProductSizes[i].StockQuantity" class="form-control" placeholder="Nhập số lượng tồn kho" min="0" required />
+                <label class="mt-2">Giá</label>
+                <input type="number" step="0.01" name="Prices[@i]" value="@Model.ProductSizes[i].Price" class="form-control" placeholder="Nhập giá" min="0" required />
+            </div>
+        }
+    </div>
+
+    <!-- Hiển thị ảnh hiện tại -->
+    <div class="form-group mb-3">
+        <label class="control-label">Ảnh hiện tại</label>
+        <div class="d-flex flex-wrap">
+            @if (Model.Product.ProductImages != null && Model.Product.ProductImages.Any())
+            {
+                @foreach (var image in Model.Product.ProductImages.OrderBy(pi => pi.DisplayOrder))
+                {
+                    <div class="m-2 position-relative">
+                        <img src="@image.ImageUrl" alt="@Model.Product.Name" style="max-width: 150px; max-height: 150px;" />
+                        <div class="form-check mt-2">
+                            <input type="radio" name="MainImageId" value="@image.ImageId" class="form-check-input" @(image.IsMainImage ? "checked" : "") />
+                            <label class="form-check-label">Ảnh chính</label>
+                        </div>
+                        <button type="submit" name="DeleteImageId" value="@image.ImageId" class="btn btn-danger btn-sm mt-2" onclick="return confirm('Bạn có chắc muốn xóa ảnh này?');">Xóa</button>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Không có ảnh nào.</p>
+            }
+        </div>
+    </div>
+
+    <!-- Tải lên ảnh mới -->
+    <div class="form-group mb-3">
+        <label class="control-label">Tải lên ảnh mới (tối đa 3 ảnh)</label>
+        <input type="file" name="images" multiple class="form-control" accept="image/*" />
+        <small class="form-text text-muted">{Chọn ảnh chính cho ảnh mới (nếu có):</small>
+        <div id="newImageInputs">
+            <!-- JavaScript sẽ thêm radio button cho ảnh mới -->
+        </div>
+    </div>
+
+    <!-- Nút submit -->
+    <div class="form-group">
+        <input type="submit" value="Lưu" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Lưu trữ danh sách kích thước hiện tại
+            var existingSizes = @Json.Serialize(Model.ProductSizes.Select(ps => new { ps.SizeId, ps.ProductSizeId, ps.StockQuantity, ps.Price }));
+
+            // Hàm để tạo các trường nhập liệu cho kích thước
+            function renderSizeInputs(selectedSizes) {
+                var sizeInputs = $('#sizeInputs');
+                sizeInputs.empty();
+
+                if (selectedSizes && selectedSizes.length > 0) {
+                    selectedSizes.forEach(function (sizeId, index) {
+                        var sizeName = $('#sizeSelect option[value="' + sizeId + '"]').text();
+                        var existingSize = existingSizes.find(es => es.SizeId == parseInt(sizeId));
+                        var productSizeId = existingSize ? existingSize.ProductSizeId : 0;
+                        var stockQuantity = existingSize ? existingSize.StockQuantity : '';
+                        var price = existingSize ? existingSize.Price : '';
+
+                        sizeInputs.append(`
+                            <div class="form-group mb-3">
+                                <input type="hidden" name="ProductSizeIds[${index}]" value="${productSizeId}" />
+                                <h5>Kích thước: ${sizeName}</h5>
+                                <input type="hidden" name="SizeIds[${index}]" value="${sizeId}" />
+                                <label>Số lượng tồn kho</label>
+                                <input type="number" name="StockQuantities[${index}]" value="${stockQuantity}" class="form-control" placeholder="Nhập số lượng tồn kho" min="0" required />
+                                <label class="mt-2">Giá</label>
+                                <input type="number" step="0.01" name="Prices[${index}]" value="${price}" class="form-control" placeholder="Nhập giá" min="0" required />
+                            </div>
+                        `);
+                    });
+                }
+            }
+
+            // Khi dropdown kích thước thay đổi
+            $('#sizeSelect').on('change', function () {
+                var selectedSizes = $(this).val();
+                renderSizeInputs(selectedSizes);
+            });
+
+            // Khởi tạo các trường nhập liệu khi trang tải
+            var initialSelectedSizes = $('#sizeSelect').val() || [];
+            renderSizeInputs(initialSelectedSizes);
+
+            // Xử lý ảnh mới tải lên
+            $('input[name="images"]').on('change', function () {
+                var files = this.files;
+                var newImageInputs = $('#newImageInputs');
+                newImageInputs.empty();
+
+                if (files && files.length > 0) {
+                    for (var i = 0; i < files.length; i++) {
+                        newImageInputs.append(`
+                            <div class="form-check mt-2">
+                                <input type="radio" name="MainImageIndex" value="${i}" class="form-check-input" ${i === 0 ? 'checked' : ''} />
+                                <label class="form-check-label">Ảnh chính: ${files[i].name}</label>
+                            </div>
+                        `);
+                    }
+                }
+            });
+        });
+    </script>
+}

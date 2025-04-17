@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DACS_PetShop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d6d616a168d1eec9379bfacdb530919b78d2a33")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2cbe3210a53d7b3dff00da0c94cf93574cea49f")]
 [assembly: System.Reflection.AssemblyProductAttribute("DACS_PetShop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DACS_PetShop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

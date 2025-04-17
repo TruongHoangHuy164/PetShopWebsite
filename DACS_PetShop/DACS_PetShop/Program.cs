@@ -21,16 +21,6 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 // (Tuỳ chọn) Nếu muốn xác minh email, cần thêm IEmailSender
 // builder.Services.AddTransient<IEmailSender, YourEmailSenderClass>();
 
-/*builder.Services.AddAuthentication()
-    .AddGoogle(options =>
-    {
-        IConfigurationSection googleAuthNSection =
-            builder.Configuration.GetSection("Authentication:Google");
-
-        options.ClientId = googleAuthNSection["ClientId"];
-        options.ClientSecret = googleAuthNSection["ClientSecret"];
-        options.CallbackPath = "/signin-google";
-    });*/
 // Cấu hình đường dẫn cookie (login/logout)
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -38,15 +28,23 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LogoutPath = "/Identity/Account/Logout";
     options.AccessDeniedPath = "/Identity/Account/AccessDenied";
 });
-// Đăng Nhập Google
 
+// Google Authentication (commented-out for now, uncomment to use)
+//builder.Services.AddAuthentication()
+//    .AddGoogle(options =>
+//    {
+//        IConfigurationSection googleAuthNSection =
+//            builder.Configuration.GetSection("Authentication:Google");
 
+//        options.ClientId = googleAuthNSection["ClientId"];
+//        options.ClientSecret = googleAuthNSection["ClientSecret"];
+//        options.CallbackPath = "/signin-google";
+//    });
 
 // Thêm Razor Pages và MVC
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages(); // 💡 BẮT BUỘC để dùng giao diện Identity mặc định
 builder.Services.AddTransient<IEmailSender, EmailSender>();
-
 
 var app = builder.Build();
 
