@@ -1,0 +1,29 @@
+﻿@model DACS_PetShop.Models.Size
+
+@{
+    ViewData["Title"] = "Edit Size";
+}
+
+<h1>Edit Size</h1>
+
+<!-- Form chỉnh sửa kích thước -->
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <!-- Nút lưu lại -->
+    <button type="submit" class="btn btn-primary">Save</button>
+
+    <!-- Nút hủy bỏ và quay lại danh sách -->
+    <a href="@Url.Action("Index", "Sizes")" class="btn btn-secondary">Cancel</a>
+</form>
+
+<!-- Đảm bảo thêm validation scripts nếu có -->
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

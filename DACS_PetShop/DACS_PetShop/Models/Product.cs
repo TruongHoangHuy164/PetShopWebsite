@@ -1,42 +1,38 @@
-﻿using static Org.BouncyCastle.Asn1.Cmp.Challenge;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DACS_PetShop.Models
 {
-    // Model for Product
     public class Product
     {
-        [Key]
         public int ProductId { get; set; }
 
-        [Required]
-        [StringLength(100)]
+        [Required(ErrorMessage = "Product name is required.")]
         public string Name { get; set; }
 
-        [Required]
-        [StringLength(500)]
         public string Description { get; set; }
 
-        [Required]
-        [Range(0, double.MaxValue)]
-        public decimal Price { get; set; }
+        //[Required(ErrorMessage = "Price is required.")]
+        //[Range(0, double.MaxValue, ErrorMessage = "Price must be non-negative.")]
+        //public decimal Price { get; set; }
 
-        [Required]
-        [Range(0, int.MaxValue)]
-        public int StockQuantity { get; set; }
-
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
-
-        public int BrandId { get; set; }
-        public Brand Brand { get; set; }
+        //[Required(ErrorMessage = "Stock quantity is required.")]
+        //[Range(0, int.MaxValue, ErrorMessage = "Stock quantity must be non-negative.")]
+        //public int StockQuantity { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        public ICollection<ProductImage> Images { get; set; }
-        public ICollection<CartItem> CartItems { get; set; }
-        public ICollection<WishlistItem> WishlistItems { get; set; }
-        public ICollection<OrderDetail> OrderDetails { get; set; }
-        public ICollection<Review> Reviews { get; set; }
+        [Required(ErrorMessage = "Category is required.")]
+        public int CategoryId { get; set; }
+        public Category? Category { get; set; }
+
+        [Required(ErrorMessage = "Brand is required.")]
+        public int BrandId { get; set; }
+        public Brand? Brand { get; set; }
+
+        // Liên kết với ProductSize
+        public ICollection<ProductSize>? ProductSizes { get; set; }
+        public ICollection<ProductImage>? ProductImages { get; set; }
     }
 }

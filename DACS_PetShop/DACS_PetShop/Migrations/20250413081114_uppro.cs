@@ -5,7 +5,7 @@
 namespace DACS_PetShop.Migrations
 {
     /// <inheritdoc />
-    public partial class Identity1 : Migration
+    public partial class uppro : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<DACS_PetShop.Models.Product>
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+<h1>Danh sách sản phẩm</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Tạo sản phẩm mới</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Ảnh chính</th>
+            <th>Tên sản phẩm</th>
+            <th>Mô tả</th>
+           @*  <th>Giá mặc định</th>
+            <th>Tồn kho mặc định</th> *@
+            <th>Kích thước (Giá/Tồn kho)</th>
+            <th>Thương hiệu</th>
+            <th>Danh mục</th>
+            <th>Ngày tạo</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            // Lấy ảnh chính (nếu có)
+            var mainImage = product.ProductImages?.FirstOrDefault(pi => pi.IsMainImage)?.ImageUrl;
+
+            <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(mainImage))
+                    {
+                        <img src="@mainImage" alt="@product.Name" style="max-width: 100px; max-height: 100px;" />
+                    }
+                    else
+                    {
+                        <span>Không có ảnh</span>
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => product.Name)</td>
+                <td>@Html.DisplayFor(modelItem => product.Description)</td>
+               @*  <td>@Html.DisplayFor(modelItem => product.Price)</td>
+                <td>@Html.DisplayFor(modelItem => product.StockQuantity)</td> *@
+                <td>
+                    @if (product.ProductSizes != null && product.ProductSizes.Any())
+                    {
+                        <ul>
+                            @foreach (var productSize in product.ProductSizes)
+                            {
+                                <li>
+                                    @productSize.Size.Name: @productSize.Price VNĐ / @productSize.StockQuantity
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <span>Không có kích thước</span>
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => product.Brand.Name)</td>
+                <td>@Html.DisplayFor(modelItem => product.Category.Name)</td>
+                <td>@Html.DisplayFor(modelItem => product.CreatedAt)</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@product.ProductId" class="btn btn-info btn-sm">Chi tiết</a>
+                    <a asp-action="Edit" asp-route-id="@product.ProductId" class="btn btn-warning btn-sm">Sửa</a>
+                    <a asp-action="Delete" asp-route-id="@product.ProductId" class="btn btn-danger btn-sm">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        // Có thể thêm JavaScript nếu cần (ví dụ: sắp xếp bảng, tìm kiếm)
+    </script>
+}

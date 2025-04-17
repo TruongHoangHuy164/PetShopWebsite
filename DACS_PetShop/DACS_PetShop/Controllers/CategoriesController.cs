@@ -59,7 +59,8 @@ namespace DACS_PetShop.Controllers
             {
                 _context.Add(category);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["SuccessMessage"] = "Category created successfully!";
+                return RedirectToAction(nameof(Create));
             }
             return View(category);
         }

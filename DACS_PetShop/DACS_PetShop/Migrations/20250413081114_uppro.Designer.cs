@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DACS_PetShop.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250413032737_Updtb")]
-    partial class Updtb
+    [Migration("20250413081114_uppro")]
+    partial class uppro
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -319,13 +319,11 @@ namespace DACS_PetShop.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -356,6 +354,9 @@ namespace DACS_PetShop.Migrations
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsMainImage")
+                        .HasColumnType("bit");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -603,7 +604,7 @@ namespace DACS_PetShop.Migrations
                         .IsRequired();
 
                     b.HasOne("DACS_PetShop.Models.Product", "Product")
-                        .WithMany("CartItems")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -633,7 +634,7 @@ namespace DACS_PetShop.Migrations
                         .IsRequired();
 
                     b.HasOne("DACS_PetShop.Models.Product", "Product")
-                        .WithMany("OrderDetails")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -676,7 +677,7 @@ namespace DACS_PetShop.Migrations
             modelBuilder.Entity("DACS_PetShop.Models.ProductImage", b =>
                 {
                     b.HasOne("DACS_PetShop.Models.Product", "Product")
-                        .WithMany("Images")
+                        .WithMany("ProductImages")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -687,7 +688,7 @@ namespace DACS_PetShop.Migrations
             modelBuilder.Entity("DACS_PetShop.Models.Review", b =>
                 {
                     b.HasOne("DACS_PetShop.Models.Product", "Product")
-                        .WithMany("Reviews")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -717,7 +718,7 @@ namespace DACS_PetShop.Migrations
             modelBuilder.Entity("DACS_PetShop.Models.WishlistItem", b =>
                 {
                     b.HasOne("DACS_PetShop.Models.Product", "Product")
-                        .WithMany("WishlistItems")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -809,15 +810,7 @@ namespace DACS_PetShop.Migrations
 
             modelBuilder.Entity("DACS_PetShop.Models.Product", b =>
                 {
-                    b.Navigation("CartItems");
-
-                    b.Navigation("Images");
-
-                    b.Navigation("OrderDetails");
-
-                    b.Navigation("Reviews");
-
-                    b.Navigation("WishlistItems");
+                    b.Navigation("ProductImages");
                 });
 
             modelBuilder.Entity("DACS_PetShop.Models.Wishlist", b =>

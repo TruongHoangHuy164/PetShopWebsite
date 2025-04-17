@@ -1,0 +1,183 @@
+﻿@* @model DACS_PetShop.Models.Product
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<h1>Create Product</h1>
+<hr />
+
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <!-- Product Name -->
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <!-- Price -->
+            <div class="form-group mb-3">
+                <label asp-for="Price" class="form-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <!-- Stock Quantity -->
+            <div class="form-group mb-3">
+                <label asp-for="StockQuantity" class="form-label"></label>
+                <input asp-for="StockQuantity" class="form-control" />
+                <span asp-validation-for="StockQuantity" class="text-danger"></span>
+            </div>
+
+            <!-- Category Dropdown -->
+            <div class="form-group mb-3">
+                <label asp-for="CategoryId" class="form-label"></label>
+                <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.CategoryId">
+                    <option value="">-- Select Category --</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+            <!-- Brand Dropdown -->
+            <div class="form-group mb-3">
+                <label asp-for="BrandId" class="form-label"></label>
+                <select asp-for="BrandId" class="form-select" asp-items="ViewBag.BrandId">
+                    <option value="">-- Select Brand --</option>
+                </select>
+                <span asp-validation-for="BrandId" class="text-danger"></span>
+            </div>
+
+            <!-- Upload Images --> 
+            <div class="form-group mb-4"> 
+                <label class="form-label">Product Images (Max 3)</label> 
+               <input type="file" name="images" class="form-control" multiple /> 
+                <small class="form-text text-muted">You can upload up to 3 images.</small> 
+            </div>
+
+            <!-- Submit -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-action="Index" class="btn btn-secondary ms-2">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+ *@
+
+            @model DACS_PetShop.Models.Product
+
+@{
+    ViewData["Title"] = "Tạo sản phẩm mới";
+}
+
+<h1>Tạo sản phẩm mới</h1>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <!-- Thông tin cơ bản của sản phẩm -->
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Tên sản phẩm</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label">Mô tả</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+  @*   <div class="form-group">
+        <label asp-for="Price" class="control-label">Giá mặc định</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StockQuantity" class="control-label">Số lượng tồn kho mặc định</label>
+        <input asp-for="StockQuantity" class="form-control" />
+        <span asp-validation-for="StockQuantity" class="text-danger"></span>
+    </div> *@
+    <div class="form-group">
+        <label asp-for="CategoryId" class="control-label">Danh mục</label>
+        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BrandId" class="control-label">Thương hiệu</label>
+        <select asp-for="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select>
+        <span asp-validation-for="BrandId" class="text-danger"></span>
+    </div>
+
+    <!-- Chọn kích thước -->
+    <div class="form-group">
+        <label class="control-label">Kích thước</label>
+        <select multiple name="sizeIds" class="form-control" asp-items="ViewBag.Sizes"></select>
+        <small class="form-text text-muted">Chọn các kích thước áp dụng cho sản phẩm này.</small>
+    </div>
+
+    <!-- Trường động để nhập giá và số lượng tồn kho -->
+    <div id="sizeInputs" class="mb-3">
+        <!-- JavaScript sẽ thêm các trường nhập tại đây -->
+    </div>
+
+    <!-- Tải lên ảnh -->
+    <div class="form-group">
+        <label class="control-label">Ảnh sản phẩm (tối đa 3 ảnh)</label>
+        <input type="file" name="images" multiple class="form-control" accept="image/*" />
+    </div>
+
+    <!-- Nút submit -->
+    <div class="form-group">
+        <input type="submit" value="Tạo" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Khi dropdown kích thước thay đổi
+            $('select[name="sizeIds"]').on('change', function () {
+                var selectedSizes = $(this).val(); // Lấy danh sách SizeId đã chọn
+                var sizeInputs = $('#sizeInputs');
+                sizeInputs.empty(); // Xóa các trường hiện tại
+
+                if (selectedSizes && selectedSizes.length > 0) {
+                    selectedSizes.forEach(function (sizeId, index) {
+                        var sizeName = $('select[name="sizeIds"] option[value="' + sizeId + '"]').text();
+                        // Thêm các trường nhập cho từng kích thước
+                        sizeInputs.append(`
+                            <div class="form-group mb-3">
+                                <h5>Kích thước: ${sizeName}</h5>
+                                <input type="hidden" name="sizeIds[${index}]" value="${sizeId}" />
+                                <label>Số lượng tồn kho</label>
+                                <input type="number" name="stockQuantities[${index}]" class="form-control" placeholder="Nhập số lượng tồn kho" min="0" required />
+                                <label class="mt-2">Giá</label>
+                                <input type="number" step="0.01" name="prices[${index}]" class="form-control" placeholder="Nhập giá" min="0" required />
+                            </div>
+                        `);
+                    });
+                }
+            });
+        });
+    </script>
+}

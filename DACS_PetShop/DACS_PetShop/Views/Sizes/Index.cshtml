@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DACS_PetShop.Models.Size>
+
+@{
+    ViewData["Title"] = "Sizes";
+}
+
+<h1>Sizes</h1>
+
+<p>
+    <a href="@Url.Action("Create", "Sizes")" class="btn btn-primary">Create New Size</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Sizes", new { id = item.SizeId })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", "Sizes", new { id = item.SizeId })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

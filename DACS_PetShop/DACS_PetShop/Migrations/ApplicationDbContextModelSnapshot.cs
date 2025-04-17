@@ -316,19 +316,11 @@ namespace DACS_PetShop.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("StockQuantity")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProductId");
 
@@ -353,6 +345,9 @@ namespace DACS_PetShop.Migrations
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsMainImage")
+                        .HasColumnType("bit");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -400,6 +395,24 @@ namespace DACS_PetShop.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
+                });
+
+            modelBuilder.Entity("DACS_PetShop.Models.Size", b =>
+                {
+                    b.Property<int>("SizeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SizeId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("SizeId");
+
+                    b.ToTable("Sizes");
                 });
 
             modelBuilder.Entity("DACS_PetShop.Models.Wishlist", b =>
@@ -580,6 +593,35 @@ namespace DACS_PetShop.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ProductSize", b =>
+                {
+                    b.Property<int>("ProductSizeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductSizeId"));
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SizeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockQuantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductSizeId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SizeId");
+
+                    b.ToTable("ProductSizes");
+                });
+
             modelBuilder.Entity("DACS_PetShop.Models.Cart", b =>
                 {
                     b.HasOne("ApplicationUser", "User")
@@ -600,7 +642,7 @@ namespace DACS_PetShop.Migrations
                         .IsRequired();
 
                     b.HasOne("DACS_PetShop.Models.Product", "Product")
-                        .WithMany("CartItems")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -630,7 +672,7 @@ namespace DACS_PetShop.Migrations
                         .IsRequired();
 
                     b.HasOne("DACS_PetShop.Models.Product", "Product")
-                        .WithMany("OrderDetails")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -673,7 +715,7 @@ namespace DACS_PetShop.Migrations
             modelBuilder.Entity("DACS_PetShop.Models.ProductImage", b =>
                 {
                     b.HasOne("DACS_PetShop.Models.Product", "Product")
-                        .WithMany("Images")
+                        .WithMany("ProductImages")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -684,7 +726,7 @@ namespace DACS_PetShop.Migrations
             modelBuilder.Entity("DACS_PetShop.Models.Review", b =>
                 {
                     b.HasOne("DACS_PetShop.Models.Product", "Product")
-                        .WithMany("Reviews")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -714,7 +756,7 @@ namespace DACS_PetShop.Migrations
             modelBuilder.Entity("DACS_PetShop.Models.WishlistItem", b =>
                 {
                     b.HasOne("DACS_PetShop.Models.Product", "Product")
-                        .WithMany("WishlistItems")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -781,6 +823,25 @@ namespace DACS_PetShop.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ProductSize", b =>
+                {
+                    b.HasOne("DACS_PetShop.Models.Product", "Product")
+                        .WithMany("ProductSizes")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DACS_PetShop.Models.Size", "Size")
+                        .WithMany("ProductSizes")
+                        .HasForeignKey("SizeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Size");
+                });
+
             modelBuilder.Entity("DACS_PetShop.Models.Brand", b =>
                 {
                     b.Navigation("Products");
@@ -806,15 +867,14 @@ namespace DACS_PetShop.Migrations
 
             modelBuilder.Entity("DACS_PetShop.Models.Product", b =>
                 {
-                    b.Navigation("CartItems");
+                    b.Navigation("ProductImages");
 
-                    b.Navigation("Images");
+                    b.Navigation("ProductSizes");
+                });
 
-                    b.Navigation("OrderDetails");
-
-                    b.Navigation("Reviews");
-
-                    b.Navigation("WishlistItems");
+            modelBuilder.Entity("DACS_PetShop.Models.Size", b =>
+                {
+                    b.Navigation("ProductSizes");
                 });
 
             modelBuilder.Entity("DACS_PetShop.Models.Wishlist", b =>

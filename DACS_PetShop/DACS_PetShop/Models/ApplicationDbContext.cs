@@ -8,8 +8,9 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         : base(options)
     {
     }
-
     public DbSet<Product> Products { get; set; }
+    public DbSet<Size> Sizes { get; set; }  // Thêm DbSet cho Size
+    public DbSet<ProductSize> ProductSizes { get; set; }  // Thêm DbSet cho ProductSize
     public DbSet<ProductImage> ProductImages { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<Brand> Brands { get; set; }
@@ -30,7 +31,16 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         modelBuilder.Entity<ProductImage>()
             .HasIndex(pi => new { pi.ProductId, pi.DisplayOrder })
             .IsUnique();
+        // Mối quan hệ giữa Product và Size thông qua ProductSize
+        modelBuilder.Entity<ProductSize>()
+            .HasOne(ps => ps.Product)
+            .WithMany(p => p.ProductSizes)
+            .HasForeignKey(ps => ps.ProductId);
 
+        modelBuilder.Entity<ProductSize>()
+            .HasOne(ps => ps.Size)
+            .WithMany(s => s.ProductSizes)
+            .HasForeignKey(ps => ps.SizeId);
         // CartItem constraint: Quantity must be positive
         modelBuilder.Entity<CartItem>()
             .Property(ci => ci.Quantity)

@@ -15,6 +15,6 @@ namespace DACS_PetShop.Models
         [StringLength(200)]
         public string Description { get; set; }
 
-        public ICollection<Product> Products { get; set; }
+        public ICollection<Product>? Products { get; set; }
     }
 }
