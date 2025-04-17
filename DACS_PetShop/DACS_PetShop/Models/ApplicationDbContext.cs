@@ -64,5 +64,10 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         modelBuilder.Entity<Review>()
             .Property(r => r.Rating)
             .HasDefaultValue(1);
+        // Mối quan hệ giữa Product và Review
+        modelBuilder.Entity<Review>()
+           .HasOne(r => r.Product)
+           .WithMany(p => p.Reviews)
+           .HasForeignKey(r => r.ProductId);
     }
 }

@@ -34,5 +34,6 @@ namespace DACS_PetShop.Models
         // Liên kết với ProductSize
         public ICollection<ProductSize>? ProductSizes { get; set; }
         public ICollection<ProductImage>? ProductImages { get; set; }
+        public ICollection<Review>? Reviews { get; set; } // Đảm bảo có thuộc tính này
     }
 }

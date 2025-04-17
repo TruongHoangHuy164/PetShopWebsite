@@ -1,0 +1,291 @@
+﻿@model IEnumerable<DACS_PetShop.Models.Product>
+
+@{
+    ViewData["Title"] = "Mèo";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="row">
+    <!-- Sidebar for Filters -->
+    <div class="col-md-3">
+        <h3>Loại Sản Phẩm</h3>
+        <form asp-action="Index" method="get">
+            <!-- Categories -->
+            <div>
+                <h4>Animals & Pet Supplies</h4>
+                @if (ViewBag.Categories != null)
+                {
+                    @foreach (var category in ViewBag.Categories)
+                    {
+                        <div>
+                            <input type="checkbox" name="categoryId" value="@category.CategoryId"
+                            @(ViewBag.SelectedCategoryId == category.CategoryId ? "checked" : "") />
+                            <label>@category.Name (@(category.Products != null ? category.Products.Count : 0))</label>
+                        </div>
+                    }
+                }
+            </div>
+
+            <hr />
+
+            <!-- Brands -->
+            <div>
+                <h4>Thương Hiệu</h4>
+                @if (ViewBag.Brands != null)
+                {
+                    @foreach (var brand in ViewBag.Brands)
+                    {
+                        <div>
+                            <input type="checkbox" name="brandId" value="@brand.BrandId"
+                            @(ViewBag.SelectedBrandId == brand.BrandId ? "checked" : "") />
+                            <label>@brand.Name (@(brand.Products != null ? brand.Products.Count : 0))</label>
+                        </div>
+                    }
+                }
+            </div>
+
+            <hr />
+
+            <!-- Sizes -->
+            <div>
+                <h4>Size</h4>
+                @if (ViewBag.Sizes != null)
+                {
+                    @foreach (var size in ViewBag.Sizes)
+                    {
+                        <div>
+                            <input type="checkbox" name="sizeId" value="@size.SizeId"
+                            @(ViewBag.SelectedSizeId == size.SizeId ? "checked" : "") />
+                            <label>@size.Name (@(size.ProductSizes != null ? size.ProductSizes.Count : 0))</label>
+                        </div>
+                    }
+                }
+            </div>
+
+            <hr />
+
+            <!-- Price Range -->
+            <div>
+                <h4>Giá</h4>
+                <input type="number" name="minPrice" placeholder="Giá tối thiểu"
+                       value="@ViewBag.MinPrice" class="form-control mb-2" />
+                <input type="number" name="maxPrice" placeholder="Giá tối đa"
+                       value="@ViewBag.MaxPrice" class="form-control mb-2" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Lọc</button>
+        </form>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="col-md-9">
+        <div class="row">
+            @if (!Model.Any())
+            {
+                <p>Không có sản phẩm nào phù hợp với bộ lọc.</p>
+            }
+            else
+            {
+                @foreach (var product in Model)
+                {
+                    var mainImage = product.ProductImages?.FirstOrDefault(pi => pi.IsMainImage)?.ImageUrl;
+                    var smallestSizePrice = product.ProductSizes?.OrderBy(ps => ps.SizeId).FirstOrDefault()?.Price;
+
+                    <div class="col-md-4 mb-4">
+                        <a href="@Url.Action("Details", "Shop", new { id = product.ProductId })" class="text-decoration-none">
+                            <div class="card">
+                                @if (!string.IsNullOrEmpty(mainImage))
+                                {
+                                    <img src="@mainImage" class="card-img-top" alt="@product.Name" />
+                                }
+                                else
+                                {
+                                    <img src="/images/placeholder.jpg" class="card-img-top" alt="Placeholder" />
+                                }
+                                <div class="card-body">
+                                    <h5 class="card-title">@product.Name</h5>
+                                    <p class="card-text text-muted">@product.Brand?.Name</p>
+                                    <p class="card-text">
+                                        @if (smallestSizePrice.HasValue)
+                                        {
+                                            <span>@smallestSizePrice.Value.ToString("#,##0")đ</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Chưa có giá</span>
+                                        }
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Thêm vào giỏ</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Reset và kiểu chung */
+    body {
+        background-color: #f5f5f5; /* Nền sáng (xám nhạt) */
+        color: #333; /* Chữ màu đen nhạt */
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h3, h4 {
+        color: #333; /* Tiêu đề màu đen nhạt */
+    }
+
+    /* Container chính */
+    .row {
+        margin: 0;
+    }
+
+    /* Sidebar bộ lọc */
+    .col-md-3 {
+        padding: 20px;
+        background-color: #fff; /* Nền trắng cho sidebar */
+        border-right: 1px solid #ddd; /* Viền phải nhẹ */
+    }
+
+        .col-md-3 h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .col-md-3 h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .col-md-3 div {
+            margin-bottom: 10px;
+        }
+
+        .col-md-3 input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .col-md-3 label {
+            color: #555; /* Màu chữ nhạt hơn cho label */
+            font-size: 1rem;
+        }
+
+        .col-md-3 hr {
+            border-color: #ddd; /* Đường kẻ màu xám nhạt */
+        }
+
+        .col-md-3 .form-control {
+            background-color: #fff; /* Nền trắng */
+            border: 1px solid #ccc; /* Viền xám nhạt */
+            color: #333; /* Chữ đen nhạt */
+        }
+
+            .col-md-3 .form-control::placeholder {
+                color: #999; /* Placeholder xám */
+            }
+
+        .col-md-3 .btn-primary {
+            background-color: #007bff;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+            .col-md-3 .btn-primary:hover {
+                background-color: #0056b3;
+            }
+
+    /* Lưới sản phẩm */
+    .col-md-9 {
+        padding: 20px;
+        background-color: #f5f5f5; /* Nền sáng cho khu vực sản phẩm */
+    }
+
+    .card {
+        background-color: #fff; /* Nền trắng cho thẻ sản phẩm */
+        border: 1px solid #ddd; /* Viền xám nhạt */
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng khi hover */
+        }
+
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        background-color: #fff; /* Nền trắng cho hình ảnh */
+        padding: 10px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+        color: #333; /* Tên sản phẩm màu đen nhạt */
+        margin-bottom: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #666; /* Màu chữ nhạt cho giá */
+        margin-bottom: 10px;
+    }
+
+        .card-text.text-muted {
+            font-size: 0.9rem;
+            color: #888; /* Thương hiệu màu xám */
+        }
+
+        .card-text span {
+            color: #e63946; /* Màu giá đỏ nhạt */
+            font-weight: bold;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    /* Thông báo không có sản phẩm */
+    .col-md-9 p {
+        font-size: 1.2rem;
+        color: #666; /* Màu chữ nhạt */
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                var name = this.name;
+                document.querySelectorAll('input[name="' + name + '"]').forEach(function (cb) {
+                    if (cb !== checkbox) cb.checked = false;
+                });
+            });
+        });
+    </script>
+}

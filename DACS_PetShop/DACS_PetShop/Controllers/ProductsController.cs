@@ -157,6 +157,8 @@ namespace DACS_PetShop.Controllers
             ViewBag.Sizes = new MultiSelectList(_context.Sizes, "SizeId", "Name", viewModel.SizeIds);
             return View(viewModel);
         }
+
+        // POST: Products/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, ProductEditViewModel model, List<IFormFile> images, int? MainImageId, int? MainImageIndex, int? DeleteImageId)
@@ -209,35 +211,38 @@ namespace DACS_PetShop.Controllers
                     // Xử lý ProductSize
                     var existingProductSizes = product.ProductSizes.ToList();
                     var selectedSizeIds = model.SizeIds ?? new List<int>();
+
+                    // Xóa các ProductSize không còn được chọn
                     var productSizesToRemove = existingProductSizes
                         .Where(ps => !selectedSizeIds.Contains(ps.SizeId))
                         .ToList();
                     _context.ProductSizes.RemoveRange(productSizesToRemove);
 
+                    // Cập nhật hoặc thêm ProductSize
                     for (int i = 0; i < selectedSizeIds.Count; i++)
                     {
-                        var productSize = new ProductSize
-                        {
-                            ProductId = model.Product.ProductId,
-                            SizeId = model.SizeIds[i],
-                            StockQuantity = model.StockQuantities[i],
-                            Price = model.Prices[i]
-                        };
+                        // Tìm ProductSize hiện có dựa trên SizeId
+                        var existingProductSize = existingProductSizes
+                            .FirstOrDefault(ps => ps.SizeId == model.SizeIds[i]);
 
-                        if (model.ProductSizeIds[i] > 0)
+                        if (existingProductSize != null)
                         {
-                            var existingProductSize = existingProductSizes
-                                .FirstOrDefault(ps => ps.ProductSizeId == model.ProductSizeIds[i]);
-                            if (existingProductSize != null)
-                            {
-                                existingProductSize.StockQuantity = model.StockQuantities[i];
-                                existingProductSize.Price = model.Prices[i];
-                                _context.Update(existingProductSize);
-                            }
+                            // Cập nhật giá trị hiện có
+                            existingProductSize.StockQuantity = model.StockQuantities[i];
+                            existingProductSize.Price = model.Prices[i];
+                            _context.Update(existingProductSize);
                         }
                         else
                         {
-                            _context.Add(productSize);
+                            // Thêm ProductSize mới
+                            var newProductSize = new ProductSize
+                            {
+                                ProductId = model.Product.ProductId,
+                                SizeId = model.SizeIds[i],
+                                StockQuantity = model.StockQuantities[i],
+                                Price = model.Prices[i]
+                            };
+                            _context.Add(newProductSize);
                         }
                     }
 
