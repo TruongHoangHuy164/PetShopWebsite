@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "8Ni/69KGzSZKT3RnK0Ce0zNutmhRRkeAi5PKxJGiOYU=",
+=======
+  "Hash": "AYSq58tgUPDl6azLvC6oI89t3K0r044r3JwIW92TqqU=",
+>>>>>>> main
   "Source": "DACS_PetShop",
   "BasePath": "_content/DACS_PetShop",
   "Mode": "Default",
