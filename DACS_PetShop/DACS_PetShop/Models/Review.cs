@@ -9,9 +9,9 @@ namespace DACS_PetShop.Models
         public int ReviewId { get; set; }
 
         public int ProductId { get; set; }
-        public Product Product { get; set; }
+        public Product ?Product { get; set; }
 
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
         public ApplicationUser User { get; set; }
 
         [Required]
@@ -19,7 +19,7 @@ namespace DACS_PetShop.Models
         public int Rating { get; set; }
 
         [StringLength(1000)]
-        public string Comment { get; set; }
+        public string? Comment { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }

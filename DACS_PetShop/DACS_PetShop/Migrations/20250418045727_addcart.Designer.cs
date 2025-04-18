@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DACS_PetShop.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250418045727_addcart")]
+    partial class addcart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -153,7 +156,7 @@ namespace DACS_PetShop.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(1);
 
-                    b.Property<int?>("SizeId")
+                    b.Property<int>("SizeId")
                         .HasColumnType("int");
 
                     b.HasKey("CartItemId");
@@ -654,7 +657,9 @@ namespace DACS_PetShop.Migrations
 
                     b.HasOne("DACS_PetShop.Models.Size", "Size")
                         .WithMany()
-                        .HasForeignKey("SizeId");
+                        .HasForeignKey("SizeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Cart");
 

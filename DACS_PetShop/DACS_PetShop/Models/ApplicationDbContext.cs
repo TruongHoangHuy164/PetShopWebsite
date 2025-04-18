@@ -64,5 +64,21 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         modelBuilder.Entity<Review>()
             .Property(r => r.Rating)
             .HasDefaultValue(1);
+        // Mối quan hệ CartItem - Size
+        modelBuilder.Entity<CartItem>()
+            .HasOne(ci => ci.Size)
+            .WithMany()
+            .HasForeignKey(ci => ci.SizeId);
+
+        // Mối quan hệ OrderDetail - Size
+        modelBuilder.Entity<OrderDetail>()
+            .HasOne(od => od.Size)
+            .WithMany()
+            .HasForeignKey(od => od.SizeId);
+        // Mối quan hệ giữa Product và Review
+        modelBuilder.Entity<Review>()
+           .HasOne(r => r.Product)
+           .WithMany(p => p.Reviews)
+           .HasForeignKey(r => r.ProductId);
     }
 }

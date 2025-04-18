@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using DACS_PetShop.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.Google;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,13 +13,22 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Cấu hình Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
-    options.SignIn.RequireConfirmedAccount = false; // ✅ Tắt xác minh email
+    options.SignIn.RequireConfirmedAccount = false; // Tắt xác minh email
 })
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
 
-// (Tuỳ chọn) Nếu muốn xác minh email, cần thêm IEmailSender
-// builder.Services.AddTransient<IEmailSender, YourEmailSenderClass>();
+// Đăng ký IHttpContextAccessor
+builder.Services.AddHttpContextAccessor();
+
+// Thêm dịch vụ session
+builder.Services.AddDistributedMemoryCache(); // Lưu trữ session trong bộ nhớ
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Timeout session
+    options.Cookie.HttpOnly = true; // Bảo mật cookie
+    options.Cookie.IsEssential = true; // Tuân thủ GDPR
+});
 
 // Cấu hình đường dẫn cookie (login/logout)
 builder.Services.ConfigureApplicationCookie(options =>
@@ -35,7 +44,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 //    {
 //        IConfigurationSection googleAuthNSection =
 //            builder.Configuration.GetSection("Authentication:Google");
-
 //        options.ClientId = googleAuthNSection["ClientId"];
 //        options.ClientSecret = googleAuthNSection["ClientSecret"];
 //        options.CallbackPath = "/signin-google";
@@ -43,7 +51,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 // Thêm Razor Pages và MVC
 builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages(); // 💡 BẮT BUỘC để dùng giao diện Identity mặc định
+builder.Services.AddRazorPages(); // Bắt buộc cho Identity UI
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 var app = builder.Build();
@@ -62,6 +70,9 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+
+// Thêm middleware session
+app.UseSession();
 
 // Xác thực & phân quyền
 app.UseAuthentication();

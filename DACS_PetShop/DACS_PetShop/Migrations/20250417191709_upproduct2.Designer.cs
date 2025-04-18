@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DACS_PetShop.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250417191709_upproduct2")]
+    partial class upproduct2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,6 +128,7 @@ namespace DACS_PetShop.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("CartId");
@@ -153,16 +157,11 @@ namespace DACS_PetShop.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(1);
 
-                    b.Property<int?>("SizeId")
-                        .HasColumnType("int");
-
                     b.HasKey("CartItemId");
 
                     b.HasIndex("CartId");
 
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("SizeId");
 
                     b.ToTable("CartItems");
                 });
@@ -249,9 +248,6 @@ namespace DACS_PetShop.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(1);
 
-                    b.Property<int>("SizeId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(18,2)");
 
@@ -260,8 +256,6 @@ namespace DACS_PetShop.Migrations
                     b.HasIndex("OrderId");
 
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("SizeId");
 
                     b.ToTable("OrderDetails");
                 });
@@ -633,7 +627,9 @@ namespace DACS_PetShop.Migrations
                 {
                     b.HasOne("ApplicationUser", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });
@@ -652,15 +648,9 @@ namespace DACS_PetShop.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DACS_PetShop.Models.Size", "Size")
-                        .WithMany()
-                        .HasForeignKey("SizeId");
-
                     b.Navigation("Cart");
 
                     b.Navigation("Product");
-
-                    b.Navigation("Size");
                 });
 
             modelBuilder.Entity("DACS_PetShop.Models.Order", b =>
@@ -688,17 +678,9 @@ namespace DACS_PetShop.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DACS_PetShop.Models.Size", "Size")
-                        .WithMany()
-                        .HasForeignKey("SizeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Order");
 
                     b.Navigation("Product");
-
-                    b.Navigation("Size");
                 });
 
             modelBuilder.Entity("DACS_PetShop.Models.Payment", b =>
