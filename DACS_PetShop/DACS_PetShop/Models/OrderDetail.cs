@@ -2,7 +2,6 @@
 
 namespace DACS_PetShop.Models
 {
-    // Model for Order Detail
     public class OrderDetail
     {
         [Key]
@@ -13,6 +12,9 @@ namespace DACS_PetShop.Models
 
         public int ProductId { get; set; }
         public Product Product { get; set; }
+
+        public int SizeId { get; set; } // Thêm SizeId
+        public Size Size { get; set; }
 
         [Required]
         [Range(1, int.MaxValue)]

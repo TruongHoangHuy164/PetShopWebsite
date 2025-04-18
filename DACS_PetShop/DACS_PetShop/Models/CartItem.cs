@@ -2,7 +2,6 @@
 
 namespace DACS_PetShop.Models
 {
-    // Model for Cart Item
     public class CartItem
     {
         [Key]
@@ -12,7 +11,10 @@ namespace DACS_PetShop.Models
         public Cart Cart { get; set; }
 
         public int ProductId { get; set; }
-        public Product Product { get; set; }
+        public Product? Product { get; set; }
+
+        public int? SizeId { get; set; } // Nullable để đồng bộ với migration
+        public Size Size { get; set; }
 
         [Required]
         [Range(1, int.MaxValue)]

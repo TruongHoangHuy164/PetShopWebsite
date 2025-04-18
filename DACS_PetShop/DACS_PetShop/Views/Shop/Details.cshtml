@@ -96,7 +96,7 @@
 
         <!-- Chọn kích thước và số lượng -->
         <h4>Kích thước và giá:</h4>
-        <form asp-action="AddToCart" asp-controller="Cart" method="post">
+        <form id="add-to-cart-form" method="post">
             <input type="hidden" name="productId" value="@Model.ProductId" />
             <div class="mb-3">
                 @if (Model.ProductSizes != null && Model.ProductSizes.Any())
@@ -131,13 +131,13 @@
                 <small class="text-muted">Tối đa: <span id="max-quantity">@(Model.ProductSizes?.FirstOrDefault()?.StockQuantity ?? 0)</span></small>
             </div>
 
-            <button type="submit" class="btn btn-primary">Thêm vào giỏ</button>
+            <button type="submit" class="btn btn-primary" id="add-to-cart-button" disabled>Thêm vào giỏ</button>
         </form>
     </div>
 </div>
 
 <!-- Modal đánh giá sản phẩm -->
-<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="5">
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -170,6 +170,17 @@
                 </form>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Toast thông báo -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="cart-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Thông báo</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body"></div>
     </div>
 </div>
 
@@ -312,6 +323,11 @@
             background-color: #0056b3;
         }
 
+        .btn-primary:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
     .btn-outline-primary {
         border-color: #007bff;
         color: #007bff;
@@ -326,27 +342,38 @@
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Cập nhật số lượng tối đa khi thay đổi kích thước
-        document.querySelectorAll('.size-option').forEach(function (radio) {
-            radio.addEventListener('change', function () {
-                var stock = parseInt(this.getAttribute('data-stock'));
-                var quantityInput = document.getElementById('quantity');
-                var maxQuantitySpan = document.getElementById('max-quantity');
+        // Khởi tạo trạng thái nút "Thêm vào giỏ hàng"
+        const addToCartButton = document.getElementById('add-to-cart-button');
+        const sizeOptions = document.querySelectorAll('.size-option');
+        const quantityInput = document.getElementById('quantity');
+        const maxQuantitySpan = document.getElementById('max-quantity');
 
-                // Cập nhật giá trị tối đa cho input số lượng
+        function updateAddToCartButton() {
+            const anySizeSelected = Array.from(sizeOptions).some(radio => radio.checked);
+            addToCartButton.disabled = !anySizeSelected;
+        }
+
+        // Gọi ngay khi tải trang
+        updateAddToCartButton();
+
+        // Cập nhật trạng thái khi chọn kích thước
+        sizeOptions.forEach(radio => {
+            radio.addEventListener('change', function () {
+                const stock = parseInt(this.getAttribute('data-stock'));
                 quantityInput.setAttribute('max', stock);
                 maxQuantitySpan.textContent = stock;
 
-                // Nếu số lượng hiện tại vượt quá tồn kho, đặt lại về 1
                 if (parseInt(quantityInput.value) > stock) {
                     quantityInput.value = 1;
                 }
+
+                updateAddToCartButton();
             });
         });
 
-        // Đảm bảo số lượng không vượt quá tồn kho khi người dùng nhập tay
-        document.getElementById('quantity').addEventListener('input', function () {
-            var max = parseInt(this.getAttribute('max'));
+        // Đảm bảo số lượng không vượt quá tồn kho
+        quantityInput.addEventListener('input', function () {
+            const max = parseInt(this.getAttribute('max'));
             if (this.value > max) {
                 this.value = max;
             }
@@ -354,5 +381,57 @@
                 this.value = 1;
             }
         });
+
+        // Gửi form qua AJAX
+        document.getElementById('add-to-cart-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = this;
+            const formData = new FormData(form);
+            const anySizeSelected = Array.from(sizeOptions).some(radio => radio.checked);
+
+            if (!anySizeSelected) {
+                showToast('Vui lòng chọn kích thước trước khi thêm vào giỏ hàng.');
+                return;
+            }
+
+            fetch('@Url.Action("AddToCart", "Cart")', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const toastEl = document.getElementById('cart-toast');
+                    const toastBody = toastEl.querySelector('.toast-body');
+                    const toast = new bootstrap.Toast(toastEl);
+
+                    if (data.success) {
+                        document.getElementById('cart-count').textContent = data.cartCount;
+                        toastBody.textContent = 'Đã thêm sản phẩm vào giỏ hàng!';
+                        toast.show();
+                    } else {
+                        if (data.message.includes('đăng nhập')) {
+                            window.location.href = '@Url.Action("Login", "Account")';
+                        } else {
+                            toastBody.textContent = data.message || 'Có lỗi xảy ra khi thêm vào giỏ hàng.';
+                            toast.show();
+                        }
+                    }
+                })
+                .catch(error => {
+                    showToast('Có lỗi xảy ra: ' + error.message);
+                });
+        });
+
+        // Hàm hiển thị toast
+        function showToast(message) {
+            const toastEl = document.getElementById('cart-toast');
+            const toastBody = toastEl.querySelector('.toast-body');
+            toastBody.textContent = message;
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
     </script>
 }
